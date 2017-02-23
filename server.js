@@ -427,7 +427,7 @@ app.get('/', function(req, res) {
 });
 
 // start the server on port 8080
-var server = app.listen(8080);
+var server = app.listen(process.env.PORT || 8080);
 // send a message
 console.log('Server has started!');
 // close port if nobody is using it
