@@ -30,7 +30,7 @@ $(document).ready(function(){
         // 'X-Originating-Ip': '11.142.231.255'
       },
       // url: 'http://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
-      url: 'http://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
+      url: 'https://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
       // crossDomain: true,
       // dataType: 'jsonp',
       // jsonp: false,
