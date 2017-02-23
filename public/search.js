@@ -31,9 +31,9 @@ $(document).ready(function(){
       },
       // url: 'http://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
       url: 'https://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
-      // crossDomain: true,
-      // dataType: 'jsonp',
-      // jsonp: false,
+      crossDomain: true,
+      dataType: 'jsonp',
+      jsonp: false,
       success: function(data) {
           console.log(data);
       },
