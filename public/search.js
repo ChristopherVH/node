@@ -26,11 +26,11 @@ $(document).ready(function(){
       // contentType: 'application/json',
       headers: {
         'Accept': 'application/json',
-        'X-Macys-Webservice-Client-Id': '43df9atwexpv8mcuh64t3buj'
+        'X-Macys-Webservice-Client-Id': '9m5dm82faq6s4t76sqxvd9k3'
         // 'X-Originating-Ip': '11.142.231.255'
       },
       // url: 'http://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
-      url: 'https://api.qa14codemacys.fds.com/v4/catalog/search?searchphrase=red',
+      url: 'https://api.macys.com/v4/catalog/search?searchphrase=red',
       // crossDomain: true,
       // dataType: 'jsonp',
       // jsonp: false,
