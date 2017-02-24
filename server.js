@@ -445,7 +445,6 @@ app.get('/webhook', function(req, res) {
 });
 
 app.get('/privacy', function(req, res) {
-  res.sendStatus(200);
   res.render('privacy');
 });
 
