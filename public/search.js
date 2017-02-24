@@ -14,7 +14,7 @@ var settings = {
     "cache-control": "no-cache",
     "postman-token": "48e82e49-b3b6-b3f0-d378-4c891ec132b8"
   }
-}
+};
 
 
 $(document).ready(function(){

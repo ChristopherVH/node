@@ -1,6 +1,8 @@
 // grab express
 var express = require('express');
 var $;
+// https plugin for requests
+var https = require('https');
 // create an express app
 var app = express();
 var hbs = require('hbs');
@@ -424,6 +426,18 @@ app.get('/', function(req, res) {
         ]
     };
     res.render('index');
+});
+
+
+app.get('/webhook', function(req, res) {
+  if (req.query['hub.mode'] === 'subscribe' &&
+      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Failed validation. Make sure the validation tokens match.");
+    res.sendStatus(403);
+  }
 });
 
 // start the server on port 8080
