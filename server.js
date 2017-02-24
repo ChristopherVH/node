@@ -445,7 +445,7 @@ app.get('/webhook', function(req, res) {
 });
 
 app.get('/privacy', function(req, res) {
-  res.redner('privacy');
+  res.render('privacy');
 });
 
 // start the server on port 8080
