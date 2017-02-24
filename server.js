@@ -444,6 +444,10 @@ app.get('/webhook', function(req, res) {
   }
 });
 
+app.get('/privacy', function(req, res) {
+  res.redner('privacy');
+});
+
 // start the server on port 8080
 var server = app.listen(process.env.PORT || 8080);
 // send a message
