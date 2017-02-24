@@ -3,6 +3,7 @@ var express = require('express');
 var $;
 // https plugin for requests
 var https = require('https');
+var config = require('config');
 // create an express app
 var app = express();
 var hbs = require('hbs');
