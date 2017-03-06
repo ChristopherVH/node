@@ -419,15 +419,15 @@ var dress = { "id": 3466719,
 
 //SET THE ROUTES
 //home page route
-app.get('/', function(req, res) {
-    res.locals = {
-        data: [
-          dress,
-          dress
-        ]
-    };
-    res.render('index');
-});
+// app.get('/', function(req, res) {
+//     res.locals = {
+//         data: [
+//           dress,
+//           dress
+//         ]
+//     };
+//     res.render('index');
+// });
 
 
 //facebook chatbot code
