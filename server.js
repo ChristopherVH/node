@@ -6,28 +6,14 @@ var https = require('https');
 var config = require('config');
 // create an express app
 var app = express();
-var hbs = require('hbs');
-// create an express route for the home page
-
-// require("jsdom").env("", function(err, window) {
-//     if (err) {
-//         console.error(err);
-//         return;
-//     }
+// var hbs = require('hbs');
+// hbs.registerPartials(__dirname + '/views/partials');
+// app.set('view engine', 'hbs');
+// app.set('views', __dirname + '/views');
 //
-//     $ = require("jquery")(window);
-// });
-// DONE:0 something cool
-hbs.registerPartials(__dirname + '/views/partials');
-
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
-
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 // tell node where to look for app resources
-
 // set the view engine to handlebars
-
 //Object for one product
 
 var dress = { "id": 3466719,
@@ -436,18 +422,18 @@ var VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
   (process.env.MESSENGER_VALIDATION_TOKEN) :
   config.get('validationToken');
 
-  app.get('/webhook', function(req, res) {
-    if (req.query['hub.mode'] === 'subscribe' &&
-        req.query['hub.verify_token'] === VALIDATION_TOKEN) {
-      console.log("Validating webhook");
-      res.status(200).send(req.query['hub.challenge']);
-    } else {
-      console.error("Failed validation. Make sure the validation tokens match.");
-      res.sendStatus(403);
-    }
-  });
-//
-// app.post('/webhook', function (req, res) {
+app.get('/webhook', function(req, res) {
+  if (req.query['hub.mode'] === 'subscribe' &&
+      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Failed validation. Make sure the validation tokens match.");
+    res.sendStatus(403);
+  }
+});
+
+app.post('/webhook', function (req, res) {
   var data = req.body;
 
   // Make sure this is a page subscription
@@ -475,7 +461,7 @@ var VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
     // will time out and we will keep trying to resend.
     res.sendStatus(200);
    }
-// });
+});
 
 /*
  * Message Event
@@ -686,7 +672,6 @@ app.post('/webhook', function (req, res) {
         }
       });
     });
-
     // Assume all went well.
     //
     // You must send back a 200, within 20 seconds, to let us know you've
