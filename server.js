@@ -417,8 +417,8 @@ var dress = { "id": 3466719,
             }
           };
 
-SET THE ROUTES
-home page route
+// SET THE ROUTES
+// home page route
 app.get('/', function(req, res) {
     res.locals = {
         data: [
