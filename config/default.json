@@ -1,6 +1,6 @@
 {
     "appSecret": "",
-    "pageAccessToken": "",
+    "pageAccessToken": "EAAI6oJtC17kBALZAAaZBZB0NpmP74XMAZCURheZAtizwFtMjI3qGnsZCR2hdRVXlwzHLEzNeelS89099MZBK8EZCLhTmL7ZCM6v9yjHQHMF7v8ZCuLbA9GKGjKT05ZArbrElK7aDy3CV103MKbqNtkagiCJTIOaFohyrmPTWZAovO8SOZBAZDZD",
     "validationToken": "let-us-get-started",
-    "serverURL": ""
+    "serverURL": "https://glacial-stream-35306.herokuapp.com/"
 }
