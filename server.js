@@ -436,18 +436,18 @@ var VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ?
   (process.env.MESSENGER_VALIDATION_TOKEN) :
   config.get('validationToken');
 
-app.get('/webhook', function(req, res) {
-  if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
-    console.log("Validating webhook");
-    res.status(200).send(req.query['hub.challenge']);
-  } else {
-    console.error("Failed validation. Make sure the validation tokens match.");
-    res.sendStatus(403);
-  }
-});
-
-app.post('/webhook', function (req, res) {
+  app.get('/webhook', function(req, res) {
+    if (req.query['hub.mode'] === 'subscribe' &&
+        req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+      console.log("Validating webhook");
+      res.status(200).send(req.query['hub.challenge']);
+    } else {
+      console.error("Failed validation. Make sure the validation tokens match.");
+      res.sendStatus(403);
+    }
+  });
+//
+// app.post('/webhook', function (req, res) {
   var data = req.body;
 
   // Make sure this is a page subscription
@@ -475,7 +475,7 @@ app.post('/webhook', function (req, res) {
     // will time out and we will keep trying to resend.
     res.sendStatus(200);
    }
-});
+// });
 
 /*
  * Message Event
